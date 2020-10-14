@@ -1,0 +1,10 @@
+<div class="movie">
+    <h2>{{movie.name}}</h2>
+    <img class="img-movie" [src]= "movie.image.medium">
+    <span>Lenguaje</span>
+    <h2>{{movie.language}}</h2>
+    <span>Género</span>
+    <div class="genres" *ngFor=" let genre of  movie.genres;">
+        <span>{{genre}}</span>
+    </div>
+</div>

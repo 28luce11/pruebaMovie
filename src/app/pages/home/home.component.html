@@ -1,0 +1,24 @@
+<!--pagina Principal (click)="searchMovies(termino.value)"-->
+<div class="home">
+    <div class="search">
+        <h1 class="title">Buscar Peliculas</h1>
+        <form class="form-search" [formGroup]="formGroupMovie" (ngSubmit)="searchMovies()">
+            <input id=termino 
+                name= termino  
+                formControlName="termino" 
+                class="input-search"  
+                placeholder="Buscar Pelicula">
+            <button class="button-search" type="submit" >
+                Buscar
+            </button>
+        </form>
+    </div>
+    <div class="result">
+        <div class="result-movie" *ngFor="let movie of movies">
+            <div class="movie" (click)="seeMovie(movie.show.id)">
+                <img class="img-movie" [src]= "movie.show.image.medium" >
+                <h2 class="title-movie">{{movie.show.name}}</h2>
+            </div>
+        </div>
+    </div>
+</div>
